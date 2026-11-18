@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitness ndakaruu – Cours de fitness à Dakar</title>
+<meta name="description" content="Cours de fitness pour tous les niveaux : cardio, renforcement, HIIT et étirements. Bouge à Dakar, à ton rythme.">
+<style>
+:root{--ink:#10202B;--green:#0F7B4F;--sun:#FFC83D;--sea:#E6F2EE;--bg:#F7FAF8;--muted:#4C5E68}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none}
+nav a{margin-left:18px;text-decoration:none;font-weight:600}
+nav a:hover{color:var(--green)}
+.hero{background:var(--green);color:#fff;padding:64px 0 72px}
+.hero h1{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(2.6rem,9vw,5.5rem);line-height:1;margin:0 0 18px;letter-spacing:.5px}
+.hero p{max-width:34em;font-size:1.15rem;margin:0 0 28px}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:hover{background:#fff}
+section{padding:56px 0}
+h2{font-size:1.8rem;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 24px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.filters button{font:inherit;font-weight:600;padding:8px 18px;border:2px solid var(--green);background:transparent;color:var(--green);border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.course{background:#fff;border-left:6px solid var(--sun);padding:18px 20px;border-radius:6px}
+.course h3{margin:0 0 4px;font-size:1.15rem}
+.course small{color:var(--muted)}
+.course[hidden]{display:none}
+.about{background:var(--sea)}
+.contact{text-align:center}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media (max-width:560px){nav a{margin-left:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="logo" href="#">Fitness ndakaruu</a>
+    <nav>
+      <a href="#cours">Cours</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Bouge à Dakar.<br>À ton rythme.</h1>
+    <p>Des cours de fitness pour tous les niveaux : cardio, renforcement, HIIT et étirements. Chez toi, en salle ou sur la corniche.</p>
+    <a class="btn" href="#cours">Voir les cours</a>
+  </div>
+</div>
+
+<section id="cours">
+  <div class="wrap">
+    <h2>Nos cours</h2>
+    <p class="lead">Choisis ton niveau pour voir les séances qui te conviennent.</p>
+    <div class="filters" role="group" aria-label="Filtrer par niveau">
+      <button type="button" data-level="tous" aria-pressed="true">Tous</button>
+      <button type="button" data-level="debutant" aria-pressed="false">Débutant</button>
+      <button type="button" data-level="intermediaire" aria-pressed="false">Intermédiaire</button>
+      <button type="button" data-level="avance" aria-pressed="false">Avancé</button>
+    </div>
+    <div class="grid">
+      <article class="course" data-level="debutant"><h3>Cardio doux</h3><small>Débutant · 30 min</small><p>Marche rapide, pas simples et rythme progressif pour reprendre en douceur.</p></article>
+      <article class="course" data-level="debutant"><h3>Étirements et mobilité</h3><small>Débutant · 20 min</small><p>Détends ton corps et gagne en souplesse après une longue journée.</p></article>
+      <article class="course" data-level="intermediaire"><h3>Renforcement complet</h3><small>Intermédiaire · 40 min</small><p>Squats, pompes et gainage pour tonifier tout le corps sans matériel.</p></article>
+      <article class="course" data-level="intermediaire"><h3>Cardio dynamique</h3><small>Intermédiaire · 35 min</small><p>Un enchaînement énergique pour brûler des calories en musique.</p></article>
+      <article class="course" data-level="avance"><h3>HIIT</h3><small>Avancé · 25 min</small><p>Intervalles courts et intenses pour pousser tes limites.</p></article>
+      <article class="course" data-level="avance"><h3>Circuit training</h3><small>Avancé · 45 min</small><p>Plusieurs ateliers à enchaîner pour gagner en force et en endurance.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="apropos" class="about">
+  <div class="wrap">
+    <h2>À propos</h2>
+    <p>Fitness ndakaruu est né à Dakar avec une idée simple : rendre le sport accessible à tous. Chaque séance est pensée pour être faite sans matériel compliqué, que tu sois débutant ou déjà sportif.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Rejoins-nous</h2>
+    <p class="lead">Une question ou envie de t'inscrire ? Écris-nous.</p>
+    <a class="btn" href="mailto:contact@exemple.com">Nous écrire</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Fitness ndakaruu</div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.filters button');
+  const courses = document.querySelectorAll('.course');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const level = btn.dataset.level;
+      buttons.forEach(b => b.setAttribute('aria-pressed', b === btn));
+      courses.forEach(c => { c.hidden = level !== 'tous' && c.dataset.level !== level; });
+    });
+  });
+</script>
+</body>
+</html>
