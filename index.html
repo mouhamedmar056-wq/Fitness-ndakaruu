@@ -1,84 +1,61 @@
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fitness ndakaruu – Cours de fitness à Dakar</title>
 <meta name="description" content="Cours de fitness pour tous les niveaux : cardio, renforcement, HIIT et étirements. Bouge à Dakar, à ton rythme.">
-<style>
-:root{--ink:#10202B;--green:#0F7B4F;--sun:#FFC83D;--sea:#E6F2EE;--bg:#F7FAF8;--muted:#4C5E68}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Trebuchet MS",Verdana,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--green);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-weight:800;font-size:1.2rem;text-decoration:none}
-nav a{margin-left:18px;text-decoration:none;font-weight:600}
-nav a:hover{color:var(--green)}
-.hero{background:var(--green);color:#fff;padding:64px 0 72px}
-.hero h1{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(2.6rem,9vw,5.5rem);line-height:1;margin:0 0 18px;letter-spacing:.5px}
-.hero p{max-width:34em;font-size:1.15rem;margin:0 0 28px}
-.btn{display:inline-block;background:var(--sun);color:var(--ink);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none}
-.btn:hover{background:#fff}
-section{padding:56px 0}
-h2{font-size:1.8rem;margin:0 0 8px}
-.lead{color:var(--muted);margin:0 0 24px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
-.filters button{font:inherit;font-weight:600;padding:8px 18px;border:2px solid var(--green);background:transparent;color:var(--green);border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--green);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-.course{background:#fff;border-left:6px solid var(--sun);padding:18px 20px;border-radius:6px}
-.course h3{margin:0 0 4px;font-size:1.15rem}
-.course small{color:var(--muted)}
-.course[hidden]{display:none}
-.about{background:var(--sea)}
-.contact{text-align:center}
-footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
-@media (max-width:560px){nav a{margin-left:12px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="wrap">
+<div class="top"><div class="wrap">
   <header>
     <a class="logo" href="#">Fitness ndakaruu</a>
     <nav>
-      <a href="#cours">Cours</a>
+      <a href="#programme">Programme</a>
       <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-</div>
+</div></div>
 
 <div class="hero">
   <div class="wrap">
     <h1>Bouge à Dakar.<br>À ton rythme.</h1>
     <p>Des cours de fitness pour tous les niveaux : cardio, renforcement, HIIT et étirements. Chez toi, en salle ou sur la corniche.</p>
-    <a class="btn" href="#cours">Voir les cours</a>
+    <a class="btn" href="#programme">Créer mon programme</a>
   </div>
 </div>
 
-<section id="cours">
+<section id="programme">
   <div class="wrap">
-    <h2>Nos cours</h2>
-    <p class="lead">Choisis ton niveau pour voir les séances qui te conviennent.</p>
-    <div class="filters" role="group" aria-label="Filtrer par niveau">
-      <button type="button" data-level="tous" aria-pressed="true">Tous</button>
-      <button type="button" data-level="debutant" aria-pressed="false">Débutant</button>
-      <button type="button" data-level="intermediaire" aria-pressed="false">Intermédiaire</button>
-      <button type="button" data-level="avance" aria-pressed="false">Avancé</button>
+    <h2>Crée ton programme</h2>
+    <p class="lead">Choisis ton type de cours, ton niveau et où tu t'entraînes. On te prépare une séance avec les exercices, les séries et les temps de repos.</p>
+    <div class="builder">
+      <label>Cours
+        <select id="type">
+          <option value="musculation">Musculation</option>
+          <option value="cardio">Cardio</option>
+          <option value="yoga">Yoga</option>
+        </select>
+      </label>
+      <label>Niveau
+        <select id="niveau">
+          <option value="debutant">Débutant</option>
+          <option value="intermediaire">Intermédiaire</option>
+          <option value="avance">Avancé</option>
+        </select>
+      </label>
+      <label>Lieu
+        <select id="lieu">
+          <option value="maison">À la maison (sans matériel)</option>
+          <option value="salle">En salle</option>
+        </select>
+      </label>
+      <button type="button" id="go" class="btn">Créer mon programme</button>
     </div>
-    <div class="grid">
-      <article class="course" data-level="debutant"><h3>Cardio doux</h3><small>Débutant · 30 min</small><p>Marche rapide, pas simples et rythme progressif pour reprendre en douceur.</p></article>
-      <article class="course" data-level="debutant"><h3>Étirements et mobilité</h3><small>Débutant · 20 min</small><p>Détends ton corps et gagne en souplesse après une longue journée.</p></article>
-      <article class="course" data-level="intermediaire"><h3>Renforcement complet</h3><small>Intermédiaire · 40 min</small><p>Squats, pompes et gainage pour tonifier tout le corps sans matériel.</p></article>
-      <article class="course" data-level="intermediaire"><h3>Cardio dynamique</h3><small>Intermédiaire · 35 min</small><p>Un enchaînement énergique pour brûler des calories en musique.</p></article>
-      <article class="course" data-level="avance"><h3>HIIT</h3><small>Avancé · 25 min</small><p>Intervalles courts et intenses pour pousser tes limites.</p></article>
-      <article class="course" data-level="avance"><h3>Circuit training</h3><small>Avancé · 45 min</small><p>Plusieurs ateliers à enchaîner pour gagner en force et en endurance.</p></article>
-    </div>
+    <div id="resultat" aria-live="polite"></div>
   </div>
 </section>
 
@@ -91,26 +68,156 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2>Rejoins-nous</h2>
-    <p class="lead">Une question ou envie de t'inscrire ? Écris-nous.</p>
-    <a class="btn" href="mailto:contact@exemple.com">Nous écrire</a>
+    <h2>Réserve ta séance</h2>
+    <p class="lead">Écris-nous sur WhatsApp ou appelle-nous pour réserver.</p>
+    <p class="num">76 597 04 37</p>
+    <div class="actions">
+      <a class="btn wa" href="https://wa.me/221765970437" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      <a class="btn alt" href="tel:+221765970437">Appeler</a>
+    </div>
   </div>
 </section>
 
+<a class="float-wa" href="https://wa.me/221765970437" target="_blank" rel="noopener">WhatsApp</a>
+
 <footer>
-  <div class="wrap">© 2026 Fitness ndakaruu</div>
+  <div class="wrap">© 2026 Fitness ndakaruu · 76 597 04 37</div>
 </footer>
 
 <script>
-  const buttons = document.querySelectorAll('.filters button');
-  const courses = document.querySelectorAll('.course');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const level = btn.dataset.level;
-      buttons.forEach(b => b.setAttribute('aria-pressed', b === btn));
-      courses.forEach(c => { c.hidden = level !== 'tous' && c.dataset.level !== level; });
-    });
+const NUM = '221765970437';
+const NIV = {
+  debutant: {series: 2, coef: 0.7, repos: 60, duree: '25 min'},
+  intermediaire: {series: 3, coef: 1, repos: 45, duree: '40 min'},
+  avance: {series: 4, coef: 1.3, repos: 30, duree: '55 min'}
+};
+// [nom, base, unité, astuce]
+const EXO = {
+  musculation: {
+    maison: [['Pompes', 12, 'rép', 'Corps aligné, descends poitrine près du sol. Sur les genoux au début.'],
+             ['Squats', 15, 'rép', 'Genoux dans l\'axe des pieds, dos droit.'],
+             ['Fentes alternées', 10, 'rép', 'Par jambe, genou arrière près du sol.'],
+             ['Dips sur chaise', 10, 'rép', 'Coudes vers l\'arrière, épaules basses.'],
+             ['Gainage planche', 30, 's', 'Ventre serré, ne creuse pas le dos.']],
+    salle: [['Développé couché', 10, 'rép', 'Barre à hauteur de poitrine, pieds bien posés.'],
+            ['Squat à la barre', 10, 'rép', 'Descends jusqu\'à la parallèle, dos neutre.'],
+            ['Tirage poitrine', 12, 'rép', 'Tire vers le haut de la poitrine, omoplates serrées.'],
+            ['Presse à cuisses', 12, 'rép', 'Ne verrouille pas les genoux en haut.'],
+            ['Gainage planche', 40, 's', 'Ventre serré, respire calmement.']]
+  },
+  cardio: {
+    maison: [['Jumping jacks', 40, 's', 'Rythme régulier, réceptions souples.'],
+             ['Montées de genoux', 30, 's', 'Genoux à hauteur de hanches.'],
+             ['Burpees', 8, 'rép', 'Descends en contrôle, saute en haut.'],
+             ['Mountain climbers', 30, 's', 'Hanches basses, bras tendus.'],
+             ['Corde à sauter (ou imitation)', 45, 's', 'Petits sauts sur la pointe des pieds.']],
+    salle: [['Tapis : course rapide', 4, 'min', 'Allure où tu peux encore parler.'],
+            ['Vélo : intervalles', 3, 'min', '30 s vite, 30 s lent, en alternance.'],
+            ['Rameur', 3, 'min', 'Pousse avec les jambes, tire avec les bras.'],
+            ['Elliptique', 4, 'min', 'Garde le dos droit, mains légères.'],
+            ['Corde à sauter', 45, 's', 'Petits sauts réguliers.']]
+  },
+  yoga: {
+    maison: [['Salutation au soleil', 5, 'cycles', 'Un souffle par mouvement.'],
+             ['Chien tête en bas', 40, 's', 'Talons vers le sol, dos long.'],
+             ['Guerrier II', 30, 's', 'Par côté, genou avant au-dessus de la cheville.'],
+             ['Posture de l\'arbre', 30, 's', 'Par côté, regard fixé sur un point.'],
+             ['Posture de l\'enfant', 60, 's', 'Relâche le dos et respire profondément.']]
+  }
+};
+const NOMS = {musculation: 'Musculation', cardio: 'Cardio', yoga: 'Yoga'};
+const NIVN = {debutant: 'Débutant', intermediaire: 'Intermédiaire', avance: 'Avancé'};
+// Personnages : positions du corps (tête, épaule, hanche, genou/pied G et D, coude/main G et D)
+const P = {
+  S:[50,16,50,28,50,56,45,76,44,94,55,76,56,94,40,40,38,54,60,40,62,54],
+  J:[50,16,50,28,50,56,40,76,32,94,60,76,68,94,36,22,30,10,64,22,70,10],
+  Q:[50,30,50,42,50,68,36,72,40,94,64,72,60,94,40,52,47,46,60,52,53,46],
+  LG:[48,22,48,34,48,62,66,68,68,94,34,84,22,94,40,48,46,58,56,48,50,58],
+  PU:[84,56,76,62,44,74,26,82,10,92,26,82,10,92,76,78,76,92,76,78,76,92],
+  PD:[84,76,76,80,44,84,26,88,10,92,26,88,10,92,66,88,76,92,66,88,76,92],
+  PL:[84,64,76,70,44,78,26,85,10,92,26,85,10,92,76,90,86,92,76,90,86,92],
+  HK:[50,16,50,28,50,56,62,52,60,70,55,76,56,94,40,42,46,34,60,42,54,34],
+  RN:[54,16,50,28,46,56,62,64,52,78,36,74,22,70,58,40,66,32,40,40,34,50],
+  SU:[50,16,50,28,50,56,45,76,44,94,55,76,56,94,42,16,48,3,58,16,52,3],
+  DD:[76,74,64,60,36,38,22,66,12,92,22,66,12,92,72,76,80,92,72,76,80,92],
+  WA:[50,18,50,30,50,58,28,72,28,94,66,76,82,94,36,32,20,32,64,32,80,32],
+  TR:[50,16,50,28,50,56,50,76,50,94,66,62,52,72,42,16,48,3,58,16,52,3],
+  CH:[74,86,60,78,30,78,44,88,24,92,44,88,24,92,72,90,90,92,72,90,90,92],
+  BP:[22,64,34,66,62,66,80,64,82,92,80,64,82,92,34,46,34,30,34,46,34,30],
+  BD:[22,64,34,66,62,66,80,64,82,92,80,64,82,92,44,60,34,52,44,60,34,52],
+  PO:[50,16,50,28,50,56,45,76,44,94,55,76,56,94,38,34,40,18,62,34,60,18]
+};
+const swap = p => { const q = p.slice(); [[6,10],[7,11],[8,12],[9,13],[14,18],[15,19],[16,20],[17,21]].forEach(([a,b]) => { [q[a],q[b]] = [q[b],q[a]]; }); return q; };
+// exercice -> [position de départ, position finale]
+const M = {
+  'Pompes':['PU','PD'], 'Squats':['S','Q'], 'Fentes alternées':['S','LG'], 'Gainage planche':['PL'],
+  'Développé couché':['BP','BD'], 'Squat à la barre':['S','Q'], 'Tirage poitrine':['SU','PO'],
+  'Jumping jacks':['S','J'], 'Montées de genoux':['S','HK'], 'Burpees':['S','PL'], 'Mountain climbers':['PL'],
+  'Tapis : course rapide':['RN','RN~'], 'Salutation au soleil':['SU','S'], 'Chien tête en bas':['DD'],
+  'Guerrier II':['WA'], "Posture de l'arbre":['TR'], "Posture de l'enfant":['CH']
+};
+const PERSO = {musculation:['Moussa','#FF8A1F'], cardio:['Fatou','#1D6FA3'], yoga:['Awa','#1FA855']};
+function limb(a, b, c, d, w1, w2, col) {
+  const dx = c - a, dy = d - b, len = Math.hypot(dx, dy) || 1, nx = -dy / len, ny = dx / len;
+  const f = v => v.toFixed(1);
+  return '<path d="M' + f(a + nx*w1/2) + ' ' + f(b + ny*w1/2) + 'L' + f(c + nx*w2/2) + ' ' + f(d + ny*w2/2) +
+    'L' + f(c - nx*w2/2) + ' ' + f(d - ny*w2/2) + 'L' + f(a - nx*w1/2) + ' ' + f(b - ny*w1/2) + 'Z" fill="' + col + '"/>' +
+    '<circle cx="' + a + '" cy="' + b + '" r="' + w1/2 + '" fill="' + col + '"/><circle cx="' + c + '" cy="' + d + '" r="' + w2/2 + '" fill="' + col + '"/>';
+}
+function fig(key, maillot) {
+  const p = key.endsWith('~') ? swap(P[key.slice(0,-1)]) : P[key];
+  const peau = '#8A5A3A', ombre = '#6B4328', short = '#0B2545', cheveux = '#1B1209';
+  const jambe = (hx, hy, kx, ky, fx, fy, c) =>
+    limb(hx, hy, kx, ky, 14, 10, c) + limb(kx, ky, fx, fy, 10, 6.5, c) +
+    limb(hx, hy, hx + (kx-hx)*0.65, hy + (ky-hy)*0.65, 16, 14, short) +
+    '<circle cx="' + fx + '" cy="' + fy + '" r="5" fill="#fff" stroke="#0B2545" stroke-width="1.2"/><circle cx="' + fx + '" cy="' + (fy + 2) + '" r="3" fill="#FF8A1F"/>';
+  const bras = (sx, sy, ex, ey, mx, my, c) =>
+    limb(sx, sy, ex, ey, 9, 7, c) + limb(ex, ey, mx, my, 7, 5.5, c) + '<circle cx="' + mx + '" cy="' + my + '" r="3.6" fill="' + c + '"/>';
+  let s = '<ellipse cx="50" cy="95" rx="34" ry="2.5" fill="rgba(11,37,69,.15)"/>';
+  if (key === 'BP' || key === 'BD')
+    s += '<rect x="16" y="72" width="58" height="5" rx="2" fill="#9DB3C4"/><line x1="22" y1="' + p[17] + '" x2="46" y2="' + p[17] + '" stroke="#0B2545" stroke-width="3" stroke-linecap="round"/>';
+  s += bras(p[2], p[3], p[18], p[19], p[20], p[21], ombre) + jambe(p[4], p[5], p[10], p[11], p[12], p[13], ombre);
+  s += limb(p[4], p[5], p[2], p[3], 17, 22, maillot);
+  s += jambe(p[4], p[5], p[6], p[7], p[8], p[9], peau) + bras(p[2], p[3], p[14], p[15], p[16], p[17], peau);
+  const dx = p[0] - p[2], dy = p[1] - p[3], L = Math.hypot(dx, dy) || 1;
+  s += limb(p[2], p[3], p[0], p[1], 8, 8, peau);
+  s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="9.4" fill="' + cheveux + '"/>' +
+       '<circle cx="' + (p[0] + dx/L*2.2).toFixed(1) + '" cy="' + (p[1] + dy/L*2.2).toFixed(1) + '" r="7.4" fill="' + peau + '"/>';
+  return '<svg viewBox="0 0 100 100" aria-hidden="true">' + s + '</svg>';
+}
+function demo(nom, type) {
+  const m = M[nom]; if (!m) return '';
+  const [prenom, couleur] = PERSO[type];
+  const slug = nom.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  let html = '<div class="demo"><img src="images/' + slug + '.jpg" alt="' + nom + '" onerror="this.remove()"><div>' + fig(m[0], couleur) + (m[1] ? '<small>Départ</small>' : '') + '</div>';
+  if (m[1]) html += '<div>' + fig(m[1], couleur) + '<small>Fin</small></div>';
+  return html + '</div><p class="cap">' + prenom + ' montre l\'exercice</p>';
+}
+const $ = id => document.getElementById(id);
+
+function quantite(base, unite, n) {
+  const v = Math.max(1, Math.round(base * n.coef));
+  return unite === 'rép' ? v + ' rép' : unite === 's' ? v + ' s' : unite === 'min' ? v + ' min' : v + ' ' + unite;
+}
+function creer() {
+  const type = $('type').value, niv = $('niveau').value;
+  const lieu = type === 'yoga' ? 'maison' : $('lieu').value;
+  const n = NIV[niv];
+  const liste = EXO[type][lieu];
+  const lieuTxt = lieu === 'salle' ? 'en salle' : 'à la maison';
+  let html = '<h3>' + NOMS[type] + ' · ' + NIVN[niv] + ' · ' + lieuTxt + '</h3>' +
+    '<p class="lead">' + n.series + ' séries de chaque exercice, ' + n.repos + ' s de repos entre les séries. Durée : environ ' + n.duree + '. Commence par 5 min d\'échauffement.</p><div class="grid">';
+  liste.forEach(e => {
+    html += '<article class="course">' + demo(e[0], type) + '<h3>' + e[0] + '</h3><small>' + n.series + ' × ' + quantite(e[1], e[2], n) + '</small><p>' + e[3] + '</p></article>';
   });
+  html += '</div>';
+  const msg = encodeURIComponent('Bonjour, je veux réserver une séance de ' + NOMS[type].toLowerCase() + ' (niveau ' + NIVN[niv].toLowerCase() + ', ' + lieuTxt + ').');
+  html += '<p class="resa"><a class="btn wa" href="https://wa.me/' + NUM + '?text=' + msg + '" target="_blank" rel="noopener">Réserver cette séance sur WhatsApp</a></p>';
+  $('resultat').innerHTML = html;
+}
+$('type').addEventListener('change', () => { $('lieu').disabled = $('type').value === 'yoga'; });
+$('go').addEventListener('click', creer);
+creer();
 </script>
 </body>
 </html>
